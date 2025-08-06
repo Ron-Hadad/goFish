@@ -1,6 +1,6 @@
 // routes/authRoutes.ts
 import express from "express";
-import { login, signup,validateSignup  } from "../controllers/authController";
+import { login, signup, validateSignup } from "../controllers/authController";
 import {
   createContactHandler,
   deleteContactHandler,
@@ -45,10 +45,10 @@ router.get("/statistics", authenticate, fetchContactsHandler);
 router.post("/send-phishing", authenticate, sendEmailHandler);
 
 // Route to track clicks
-router.get("/track/:trackingId/:contactId", trackClick);
+router.get("/track/:trackingId/:contactId", trackClick); // This is the tracking link that will be clicked by the user
 
 // hook from send grid that should give us data about clicks
-router.post("/sendgrid-webhook", sendgridWebhookHandler);
+router.post("/sendgrid-webhook", sendgridWebhookHandler); // This not work anymore
 
 // Route to add a malicious message (protected)
 router.post("/malicious", authenticate, createMaliciousHandler);

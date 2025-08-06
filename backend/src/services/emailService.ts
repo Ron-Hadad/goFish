@@ -53,7 +53,7 @@ export const sendPhishingEmail = async (userId: string, contacts: string[], mali
       }
     }
 
-    await user.save(); // Optionally update user data if needed
+    await user.save(); 
 
     if (errors.length > 0) {
       return { message: 'Emails sent with errors', errors };
